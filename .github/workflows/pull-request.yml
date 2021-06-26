@@ -6,11 +6,11 @@ jobs:
   docs:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: docker://sphinxdoc/sphinx
-    - run: pip3 install sphinxcontrib-fulltoc
-    - run: make html
-
-#    - uses: ammaraskar/sphinx-action@master
-#      with:
-#        docs-folder: "."
+    - name: checkout source code
+      uses: actions/checkout@v2
+    - name: install sphinx
+      run: pip3 install -U sphinx
+    - name: install sphinxcontrib-fulltoc
+      run: pip3 install sphinxcontrib-fulltoc
+    - name: build docs
+      run: make html
