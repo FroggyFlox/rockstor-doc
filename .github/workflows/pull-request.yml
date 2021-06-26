@@ -7,6 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: ammaraskar/sphinx-action@master
-      with:
-        docs-folder: "."
+    - uses: docker://sphinxdoc/sphinx
+    - run: pip3 install sphinxcontrib-fulltoc
+    - run: make html
+
+#    - uses: ammaraskar/sphinx-action@master
+#      with:
+#        docs-folder: "."
