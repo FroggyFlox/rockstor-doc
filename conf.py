@@ -268,4 +268,4 @@ linkcheck_timeout = 20
 
 # -- Options for sphinxext.rediraffe --------------------------------------
 rediraffe_redirects = "redirects.txt"
-rediraffe_branch = "origin/main"
+rediraffe_branch = "master"
